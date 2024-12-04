@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portfolio</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- Contact Form -->
+		<div class="contact-div hide" id="contact-modal">
+			<h1>CONTACT</h1>
+			<div class="black-line small-line"></div>
+			<form class="contact-form">
+				<input id="name-input" type="text" placeholder="Name" />
+				<input id="email-input" type="email" placeholder="Email" />
+				<button id="form-btn" class="form-btn">Send</button>
+			</form>
+		</div>
+
+		<!-- Navbar -->
+		<div class="navbar">
+			<h1 id="navbar-h1">PARTH SARTHEE</h1>
+			<!-- <button >-</button> -->
+			<div id="toggle-nav">
+				<img class="hide" id="menu-img" style="height: 40px" src="menu.png" />
+				<img id="close-img" style="height: 30px" src="close.png" />
+			</div>
+			<div id="navbar-links">
+				<a href="#">BLOG</a>
+				<a href="#">PROJECTS</a>
+				<a href="#">CONTACT</a>
+				<a href="#">ABOUT</a>
+			</div>
+		</div>
+
+		<div id="navbar-mobile" class="hide">
+			<a href="#">BLOG</a>
+			<a href="#">PROJECTS</a>
+			<a href="#">CONTACT</a>
+			<a href="#">ABOUT</a>
+		</div>
+
+		<!-- Hero -->
+		<div class="hero">
+			<img id="hero-img" src="parth.png" alt="Profile Picture" />
+			<h1 id="hero-heading">PARTH SARTHEE</h1>
+			<div class="white-line big-line"></div>
+			<p id="hero-text">
+				I am a Full Stack Developer. I love to build web applications and
+				websites. I am a self-taught developer and I love to learn new things.
+			</p>
+		</div>
+
+		<!-- Project Section -->
+		<div class="project flex-grid-root">
+			<h1 class="flex-grid-heading">PROJECTS</h1>
+			<div class="black-line small-line"></div>
+			<div class="flex-grid">
+				<img class="project-img" src="./projects/p1.png" />
+				<img class="project-img" src="./projects/p2.png" />
+				<img class="project-img" src="./projects/p3.png" />
+				<img class="project-img" src="./projects/p4.png" />
+				<img class="project-img" src="./projects/p5.png" />
+				<img class="project-img" src="./projects/p6.png" />
+			</div>
+		</div>
+
+		<!-- About Me -->
+		<div class="about">
+			<h1>ABOUT ME</h1>
+			<div class="white-line small-line"></div>
+			<div>
+				<p>
+					I founded a Startup company at the age of 13, have created various
+					apps, know over ten programming languages. I am an Indian, Coder, Web
+					Developer, App Developer, Competitive Programmer, Tech Enthusiast,
+					Physics Lover, Blogger, Designer, Foodie and GEEK. I am a GenZ Hybrid.
+				</p>
+
+				<p id="about-para" class="hide" style="margin-top: 20px">
+					Also, I am very much interested in modern technology, what we can
+					achieve with it, and how it is changing or shaping the modern world. I
+					am available to work on any web app, mobile app or a game. I have
+					enough experience in Android Studio, Unity 3D, Visual Studio, Sublime
+					and VSCode. Lastly, one of my fav quote: Programming is not Typing,
+					its Thinking.
+				</p>
+			</div>
+			<button id="toggle-about" class="white-btn">Show More</button>
+		</div>
+
+		<!-- Skills Section -->
+		<div class="skills flex-grid-root">
+			<h1 class="flex-grid-heading">SKILLS</h1>
+			<div class="black-line small-line"></div>
+			<div class="flex-grid">
+				<img class="skill-img" src="./skills/1.svg" />
+				<img class="skill-img" src="./skills/2.svg" />
+				<img class="skill-img" src="./skills/3.svg" />
+				<img class="skill-img" src="./skills/4.svg" />
+				<img class="skill-img" src="./skills/5.svg" />
+				<img class="skill-img" src="./skills/6.svg" />
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div class="footer">
+			<div class="upper-footer">
+				<h3>Want to know more about me?</h3>
+				<button id="contact-btn" class="green-btn">Contact Me</button>
+			</div>
+			<div class="lower-footer">Copyright © Parth Sarthee 2024</div>
+		</div>
+	</body>
+	<script src="main.js"></script>
+	<script src="fetch.js"></script>
+</html>

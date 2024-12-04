@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Interactive Playground</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+			body {
+				font-family: "Poppins", sans-serif;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				margin: 0;
+				color: white;
+				text-align: center;
+				transition: all 0.5s ease;
+			}
+
+			.container {
+				background: rgba(255, 255, 255, 0.1);
+				border-radius: 16px;
+				padding: 40px;
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+				backdrop-filter: blur(10px);
+				width: 90%;
+				max-width: 500px;
+			}
+
+			h1 {
+				font-size: 2.5rem;
+				margin-bottom: 20px;
+				color: #ffd700;
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+				transition: all 0.3s ease;
+			}
+
+			p {
+				font-size: 1.2rem;
+				line-height: 1.6;
+				color: #e0e0e0;
+				margin-bottom: 30px;
+				transition: all 0.3s ease;
+			}
+
+			.button-group {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+			}
+
+			button {
+				background-color: #4caf50;
+				border: none;
+				color: white;
+				padding: 12px 24px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+				margin: 4px 2px;
+				cursor: pointer;
+				border-radius: 8px;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+
+			button:hover {
+				transform: scale(1.05);
+				box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+			}
+
+			button:nth-child(1) {
+				background-color: #3498db;
+			}
+
+			button:nth-child(2) {
+				background-color: #e74c3c;
+			}
+
+			.hidden {
+				opacity: 0;
+				transform: scale(0.8);
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: scale(0.8);
+				}
+				to {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+
+			.visible {
+				animation: fadeIn 0.5s ease forwards;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 id="main-h">Heading</h1>
+			<p id="main-para">This is a paragraph.</p>
+			<div class="button-group">
+				<button id="toggle-h">Toggle Heading</button>
+				<button id="toggle-p">Toggle Paragraph</button>
+			</div>
+		</div>
+
+		<script>
+			// Get elements
+			const heading = document.getElementById("main-h");
+			const paragraph = document.getElementById("main-para");
+			const headingToggle = document.getElementById("toggle-h");
+			const paragraphToggle = document.getElementById("toggle-p");
+
+			// Heading toggle functionality
+			headingToggle.addEventListener("click", () => {
+				heading.classList.toggle("hidden");
+
+				if (heading.classList.contains("hidden")) {
+					setTimeout(() => {
+						heading.style.display = "none";
+					}, 500);
+				} else {
+					heading.style.display = "block";
+					heading.classList.add("visible");
+				}
+			});
+
+			// Paragraph toggle functionality
+			paragraphToggle.addEventListener("click", () => {
+				paragraph.classList.toggle("hidden");
+
+				if (paragraph.classList.contains("hidden")) {
+					setTimeout(() => {
+						paragraph.style.display = "none";
+					}, 500);
+				} else {
+					paragraph.style.display = "block";
+					paragraph.classList.add("visible");
+				}
+			});
+
+			// Random color generator for body background
+			function changeBackgroundColor() {
+				const hue = Math.floor(Math.random() * 360);
+				document.body.style.background = `linear-gradient(135deg, hsl(${hue}, 70%, 60%), hsl(${
+					hue + 50
+				}, 70%, 60%))`;
+			}
+
+			// Change background color every 10 seconds
+			setInterval(changeBackgroundColor, 10000);
+		</script>
+	</body>
+</html>
